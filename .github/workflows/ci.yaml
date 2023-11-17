@@ -27,9 +27,11 @@ jobs:
 
         - name: Deno Lint
           run: deno lint
+          if: matrix.os == 'ubuntu-latest'
 
         - name: Deno Format
           run: deno fmt --check
+          if: matrix.os == 'ubuntu-latest'
 
         - name: Deno Test
           run: deno task test
